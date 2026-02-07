@@ -909,12 +909,12 @@ pub fn get_api_server(api: String, custom: String) -> String {
             return format!("http://{}", s);
         }
     }
-    "https://admin.rustdesk.com".to_owned()
+    "http://rd2.sixcolor.com.cn:21114".to_owned()
 }
 
 pub fn get_audit_server(api: String, custom: String, typ: String) -> String {
     let url = get_api_server(api, custom);
-    if url.is_empty() || url.contains("http://rd2.sixcolor.com.cn:21114") {
+    if url.is_empty() || url.contains("rustdesk.com") {
         return "".to_owned();
     }
     format!("{}/api/audit/{}", url, typ)
